@@ -1,0 +1,461 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 基本設定 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 可読性の高いフォント */
+            line-height: 1.6; /* 行間を適度に設定し読みやすさを向上 */
+            color: #333; /* 濃いグレーでコントラストを確保 */
+            background-color: #fff; /* 白背景でクリーンな印象 */
+            font-size: 16px; /* 基本フォントサイズ */
+        }
+
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); /* 微妙なグラデーションで奥行き演出 */
+            border-bottom: 2px solid #ff6b35; /* 暖色系のアクセントカラー */
+            padding: 2rem 0; /* 上下に十分な余白 */
+            position: relative; /* 子要素の絶対配置の基準点 */
+        }
+
+        header img {
+            max-width: 80px; /* ロゴサイズを制限 */
+            height: auto; /* 縦横比を維持 */
+            margin: 0 auto 1rem; /* 中央揃えと下マージン */
+            display: block; /* ブロック要素にして中央揃えを効かせる */
+        }
+
+        header h1 {
+            text-align: center; /* 中央揃え */
+            font-size: 2.5rem; /* 大きめのフォントサイズ */
+            color: #ff6b35; /* 暖色系のブランドカラー */
+            font-weight: 300; /* 軽やかな印象 */
+            margin-bottom: 0.5rem; /* 下マージン */
+            letter-spacing: 0.05em; /* 文字間隔を調整 */
+        }
+
+        header p {
+            text-align: center; /* 中央揃え */
+            font-size: 1.1rem; /* 少し大きめ */
+            color: #666; /* 中間色のグレー */
+            margin-bottom: 2rem; /* 下マージン */
+            font-weight: 300; /* 軽やかな印象 */
+        }
+
+        /* ナビゲーション */
+        nav {
+            background-color: #fff; /* 白背景 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 微妙な影で浮遊感演出 */
+            position: sticky; /* スクロール時に固定 */
+            top: 0; /* 上端に固定 */
+            z-index: 100; /* 他要素より前面に表示 */
+            margin-top: 1rem; /* 上マージン */
+        }
+
+        nav ul {
+            list-style: none; /* リスト記号を削除 */
+            display: flex; /* フレックスボックスで横並び */
+            justify-content: center; /* 中央揃え */
+            flex-wrap: wrap; /* 小画面で折り返し */
+            padding: 0; /* パディングをリセット */
+        }
+
+        nav li {
+            margin: 0 1rem; /* 左右マージン */
+        }
+
+        nav a {
+            display: block; /* ブロック要素にしてクリック範囲を拡大 */
+            padding: 1rem 1.5rem; /* 内側余白 */
+            text-decoration: none; /* 下線を削除 */
+            color: #333; /* 濃いグレー */
+            font-weight: 500; /* 中程度の太さ */
+            transition: all 0.3s ease; /* スムーズな変化効果 */
+            border-radius: 25px; /* 角丸 */
+            position: relative; /* 疑似要素の基準点 */
+        }
+
+        nav a:hover {
+            color: #ff6b35; /* ホバー時に暖色系に変更 */
+            background-color: #fff5f2; /* 薄いオレンジ背景 */
+            transform: translateY(-2px); /* 上に少し浮上 */
+        }
+
+        /* メインコンテンツ */
+        main {
+            max-width: 1200px; /* 最大幅を設定 */
+            margin: 0 auto; /* 中央揃え */
+            padding: 0 2rem; /* 左右パディング */
+        }
+
+        /* セクション共通スタイル */
+        section {
+            margin: 4rem 0; /* 上下マージン */
+            padding: 2rem 0; /* 上下パディング */
+            border-bottom: 1px solid #eee; /* 薄いボーダーで区切り */
+        }
+
+        section:last-child {
+            border-bottom: none; /* 最後のセクションはボーダーなし */
+        }
+
+        /* 見出し */
+        h2 {
+            font-size: 2.2rem; /* 大きめのフォントサイズ */
+            color: #ff6b35; /* 暖色系のブランドカラー */
+            margin-bottom: 1.5rem; /* 下マージン */
+            text-align: center; /* 中央揃え */
+            font-weight: 300; /* 軽やかな印象 */
+            position: relative; /* 疑似要素の基準点 */
+        }
+
+        h2::after {
+            content: ''; /* 疑似要素 */
+            display: block; /* ブロック要素 */
+            width: 60px; /* 幅 */
+            height: 3px; /* 高さ */
+            background: linear-gradient(90deg, #ff6b35, #ff8a65); /* グラデーション */
+            margin: 0.5rem auto; /* 中央揃え */
+            border-radius: 2px; /* 角丸 */
+        }
+
+        h3 {
+            font-size: 1.5rem; /* フォントサイズ */
+            color: #333; /* 濃いグレー */
+            margin: 2rem 0 1rem; /* 上下マージン */
+            font-weight: 600; /* 太字 */
+        }
+
+        h4 {
+            font-size: 1.2rem; /* フォントサイズ */
+            color: #ff6b35; /* 暖色系アクセント */
+            margin: 1.5rem 0 0.5rem; /* 上下マージン */
+            font-weight: 600; /* 太字 */
+        }
+
+        /* 段落 */
+        p {
+            margin-bottom: 1.5rem; /* 下マージン */
+            color: #555; /* 中間色のグレー */
+            line-height: 1.8; /* 行間を広めに */
+        }
+
+        /* 強調 */
+        strong {
+            color: #ff6b35; /* 暖色系で強調 */
+            font-weight: 600; /* 太字 */
+        }
+
+        /* リスト */
+        ul {
+            margin-left: 1.5rem; /* 左マージン */
+            margin-bottom: 1.5rem; /* 下マージン */
+        }
+
+        li {
+            margin-bottom: 1rem; /* 下マージン */
+            color: #555; /* 中間色のグレー */
+            line-height: 1.7; /* 行間 */
+        }
+
+        /* 画像 */
+        img {
+            max-width: 100%; /* 最大幅を親要素に合わせる */
+            height: auto; /* 縦横比を維持 */
+            border-radius: 10px; /* 角丸 */
+            margin: 1rem 0; /* 上下マージン */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* 微妙な影 */
+            display: block; /* ブロック要素 */
+            margin-left: auto; /* 右マージン自動 */
+            margin-right: auto; /* 左マージン自動（中央揃え） */
+        }
+
+        /* アバウトセクション特別スタイル */
+        #about {
+            background: linear-gradient(135deg, #fff 0%, #fff8f6 100%); /* 微妙なグラデーション背景 */
+            padding: 3rem 2rem; /* 内側余白 */
+            border-radius: 15px; /* 角丸 */
+            margin-top: 2rem; /* 上マージン */
+        }
+
+        #about ul {
+            list-style: none; /* リスト記号削除 */
+            margin-left: 0; /* 左マージンリセット */
+        }
+
+        #about li {
+            background-color: #fff; /* 白背景 */
+            padding: 1.5rem; /* 内側余白 */
+            margin-bottom: 1.5rem; /* 下マージン */
+            border-radius: 10px; /* 角丸 */
+            border-left: 4px solid #ff6b35; /* 左側にアクセントボーダー */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* 微妙な影 */
+            transition: transform 0.3s ease; /* スムーズな変化 */
+        }
+
+        #about li:hover {
+            transform: translateY(-3px); /* ホバー時に上に浮上 */
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1); /* 影を強化 */
+        }
+
+        /* 実績セクション */
+        #works article {
+            background-color: #fff; /* 白背景 */
+            padding: 2rem; /* 内側余白 */
+            margin-bottom: 2rem; /* 下マージン */
+            border-radius: 10px; /* 角丸 */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* 微妙な影 */
+            border: 1px solid #eee; /* 薄いボーダー */
+            transition: transform 0.3s ease; /* スムーズな変化 */
+        }
+
+        #works article:hover {
+            transform: translateY(-3px); /* ホバー時に上に浮上 */
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1); /* 影を強化 */
+        }
+
+        /* テーブル */
+        table {
+            width: 100%; /* 幅100% */
+            border-collapse: collapse; /* ボーダーを統合 */
+            margin: 2rem 0; /* 上下マージン */
+            background-color: #fff; /* 白背景 */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* 微妙な影 */
+            border-radius: 10px; /* 角丸 */
+            overflow: hidden; /* 角丸を有効にするため */
+        }
+
+        th, td {
+            padding: 1rem; /* 内側余白 */
+            text-align: left; /* 左揃え */
+            border-bottom: 1px solid #eee; /* 下ボーダー */
+        }
+
+        th {
+            background-color: #ff6b35; /* 暖色系背景 */
+            color: white; /* 白文字 */
+            font-weight: 600; /* 太字 */
+        }
+
+        tr:hover {
+            background-color: #fff8f6; /* ホバー時の背景色 */
+        }
+
+        /* フォーム */
+        form {
+            background-color: #fff; /* 白背景 */
+            padding: 2rem; /* 内側余白 */
+            border-radius: 10px; /* 角丸 */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* 微妙な影 */
+            margin-top: 2rem; /* 上マージン */
+        }
+
+        label {
+            display: block; /* ブロック要素 */
+            margin-bottom: 0.5rem; /* 下マージン */
+            font-weight: 600; /* 太字 */
+            color: #333; /* 濃いグレー */
+        }
+
+        input, select, textarea {
+            width: 100%; /* 幅100% */
+            padding: 0.8rem; /* 内側余白 */
+            border: 2px solid #ddd; /* ボーダー */
+            border-radius: 5px; /* 角丸 */
+            font-size: 1rem; /* フォントサイズ */
+            transition: border-color 0.3s ease; /* スムーズな変化 */
+            font-family: inherit; /* 親要素のフォントを継承 */
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none; /* デフォルトのアウトラインを削除 */
+            border-color: #ff6b35; /* フォーカス時の色 */
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1); /* フォーカス時の影 */
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #ff6b35, #ff8a65); /* グラデーション背景 */
+            color: white; /* 白文字 */
+            border: none; /* ボーダーなし */
+            padding: 1rem 2rem; /* 内側余白 */
+            font-size: 1.1rem; /* フォントサイズ */
+            font-weight: 600; /* 太字 */
+            cursor: pointer; /* カーソルをポインターに */
+            transition: all 0.3s ease; /* スムーズな変化 */
+            border-radius: 25px; /* 角丸 */
+            width: auto; /* 幅を自動調整 */
+            display: inline-block; /* インラインブロック */
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px); /* ホバー時に上に浮上 */
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3); /* 影を強化 */
+        }
+
+        /* リンク */
+        a {
+            color: #ff6b35; /* 暖色系リンク色 */
+            text-decoration: none; /* 下線なし */
+            transition: color 0.3s ease; /* スムーズな変化 */
+        }
+
+        a:hover {
+            color: #e55a2b; /* ホバー時の色 */
+            text-decoration: underline; /* 下線を表示 */
+        }
+
+        /* CTAボタン */
+        .cta-button {
+            display: inline-block; /* インラインブロック */
+            background: linear-gradient(135deg, #ff6b35, #ff8a65); /* グラデーション背景 */
+            color: white; /* 白文字 */
+            padding: 1rem 2rem; /* 内側余白 */
+            border-radius: 25px; /* 角丸 */
+            text-decoration: none; /* 下線なし */
+            font-weight: 600; /* 太字 */
+            margin: 1rem 0; /* 上下マージン */
+            transition: all 0.3s ease; /* スムーズな変化 */
+            text-align: center; /* 中央揃え */
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px); /* ホバー時に上に浮上 */
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3); /* 影を強化 */
+            color: white; /* 白文字を維持 */
+            text-decoration: none; /* 下線なし */
+        }
+
+        /* フッター */
+        footer {
+            background-color: #333; /* 濃いグレー背景 */
+            color: white; /* 白文字 */
+            text-align: center; /* 中央揃え */
+            padding: 2rem 0; /* 上下パディング */
+            margin-top: 4rem; /* 上マージン */
+        }
+
+        footer a {
+            color: #ff6b35; /* 暖色系リンク色 */
+        }
+
+        footer a:hover {
+            color: #ff8a65; /* ホバー時の色 */
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            /* タブレット・スマホ向け */
+            body {
+                font-size: 14px; /* フォントサイズを小さく */
+            }
+
+            header h1 {
+                font-size: 2rem; /* 見出しサイズを小さく */
+            }
+
+            nav ul {
+                flex-direction: column; /* 縦並びに変更 */
+                align-items: center; /* 中央揃え */
+            }
+
+            nav li {
+                margin: 0.5rem 0; /* 上下マージンに変更 */
+            }
+
+            main {
+                padding: 0 1rem; /* 左右パディングを小さく */
+            }
+
+            h2 {
+                font-size: 1.8rem; /* 見出しサイズを小さく */
+            }
+
+            h3 {
+                font-size: 1.3rem; /* 見出しサイズを小さく */
+            }
+
+            section {
+                margin: 2rem 0; /* 上下マージンを小さく */
+                padding: 1rem 0; /* 上下パディングを小さく */
+            }
+
+            #about {
+                padding: 2rem 1rem; /* 内側余白を小さく */
+            }
+
+            table {
+                font-size: 0.9rem; /* テーブルフォントサイズを小さく */
+            }
+
+            th, td {
+                padding: 0.5rem; /* 内側余白を小さく */
+            }
+
+            form {
+                padding: 1.5rem; /* 内側余白を小さく */
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* スマホ向け */
+            header h1 {
+                font-size: 1.8rem; /* さらに小さく */
+            }
+
+            h2 {
+                font-size: 1.5rem; /* さらに小さく */
+            }
+
+            nav a {
+                padding: 0.8rem 1rem; /* パディングを小さく */
+            }
+
+            #about li {
+                padding: 1rem; /* 内側余白を小さく */
+            }
+
+            form {
+                padding: 1rem; /* 内側余白を小さく */
+            }
+
+            input, select, textarea {
+                padding: 0.6rem; /* 内側余白を小さく */
+            }
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0; /* 透明から開始 */
+                transform: translateY(30px); /* 下から上に */
+            }
+            to {
+                opacity: 1; /* 完全に表示 */
+                transform: translateY(0); /* 元の位置に */
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out; /* フェードインアニメーション */
+        }
+
+        /* スクロールバーのカスタマイズ */
+        ::-webkit-scrollbar {
+            width: 8px; /* スクロールバーの幅 */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* トラックの背景色 */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff6b35; /* スクロールハンドルの色 */
+            border-radius: 10px; /* 角丸 */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e55a2b; /* ホバー時の色 */
+        }
