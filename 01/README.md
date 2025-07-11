@@ -1,1 +1,122 @@
 # 新しく自分のWebサイトの作成
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Praxis | Web制作・開発</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヒーローセクション -->
+  <div class="hero-header" id="header">
+        <div class="header-content">
+            <div class="hero-logo">
+                <img src="images/logo_1.png" alt="会社ロゴ">
+                <div class="logo">Praxis</div>
+            </div>
+            <div class="menu-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav">
+                <a href="#">ホーム</a>
+                <a href="#">サービス</a>
+                <a href="#">制作実績</a>
+                <a href="#">お問い合わせ</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-main">
+                <div class="hero-text">
+                    <h1>「作る」じゃなく、「伸ばす」ためのWeb制作。</h1>
+                    <p>作って終わりじゃない。伸びるための仕組みを一緒に作ります。</p>
+                     <p>クライアントの成長を第一に考えた、戦略的なWebサイト制作をご提供します。</p> 
+                    <div class="cta-container">
+                        <a href="contact.html">お問い合わせ</a>
+                    </div>
+                </div>
+                <div class="image-warrer">
+                    <img src="images/pc.jpg" alt="渋谷の夜の交差点">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+  <!-- サービスセクション -->
+  <section class="section" id="services">
+    <div class="image-wrapper">
+        <img src="images/meeting.jpg" alt="ミーティング場面" class="section-image">
+    </div>
+    <h2>サービス</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Webアプリ開発</h3>
+            <p>顧客のビジネスニーズに合わせた、使いやすく高性能なWebアプリケーションを開発します。企画から設計、開発、運用まで一貫してサポートします。</p>
+            <ul>
+                <li>要件定義と設計</li>
+                <li>フロントエンド・バックエンド開発</li>
+                <li>データベース構築</li>
+                <li>テストとデバッグ</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>ホームページ制作</h3>
+            <p>企業や個人の魅力を最大限に引き出す、魅力的なホームページを制作します。SEO対策も考慮し、集客に繋がるデザインと機能を提供します。</p>
+            <ul>
+                <li>レスポンシブデザイン</li>
+                <li>コンテンツ企画とライティング</li>
+                <li>WordPressなどのCMS導入</li>
+                <li>公開後のメンテナンスサポート</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>プログラミング学習支援</h3>
+            <p>初心者から経験者まで、レベルに合わせたプログラミング学習をサポートします。実践的なスキル習得を目標に、個別指導やワークショップを提供します。</p>
+            <ul>
+                <li>Python、JavaScriptなどの言語指導</li>
+                <li>Web開発の基礎から応用</li>
+                <li>課題解決型学習</li>
+                <li>ポートフォリオ作成支援</li>
+            </ul>
+        </div>
+        </div>
+</section>
+
+  <!-- 実績セクション -->
+  <section class="section" id="works">
+    <h2>制作実績</h2>
+    <div class="cards">
+      <div class="card">作品A</div>
+      <div class="card">作品B</div>
+      <div class="card">作品C</div>
+    </div>
+  </section>
+
+  <!-- 自己紹介 -->
+  <section class="section" id="about">
+    <img src="images/IMG_0622.jpg" alt="me" width="100%">
+    <h2>自己紹介</h2>
+    <p>Web制作と開発が好きなフリーランスです。</p>
+    <p>HTML / CSS / JavaScript / React / Python / Django での制作が可能です。</p>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="section contact" id="contact">
+    <h2>お問い合わせ</h2>
+    <p><a href="contact.html">こちらからご連絡ください</a></p>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 Jess</p>
+  </footer>
+
+</body>
+</html>
