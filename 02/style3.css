@@ -1,0 +1,261 @@
+/* 全体設定 */
+body {
+  margin: 0; /* ブラウザのデフォルトマージンをリセット */
+  font-family: 'Helvetica', sans-serif; /* フォントを指定 */
+  line-height: 1.6; /* 行の高さを調整し、読みやすくする */
+  color: #333; /* 基本の文字色 */
+  background: #0a0a0a; /* 全体の背景色（前回指定いただいた色） */
+  -webkit-font-smoothing: antialiased; /* フォントのアンチエイリアシング（iOS/macOS向け） */
+  -moz-osx-font-smoothing: grayscale; /* フォントのアンチエイリアシング（macOS向け） */
+}
+
+/* リンクのデフォルトスタイルをリセット */
+a {
+  color: inherit; /* 親要素の文字色を継承 */
+  text-decoration: none; /* 下線をなくす */
+}
+
+/* リストのデフォルトスタイルをリセット */
+ul {
+  list-style: none; /* リストの点や数字をなくす */
+  margin: 0;
+  padding: 0;
+}
+/* ヒーローセクション */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* グラデーション背景 */
+  min-height: 80vh; /* ビューポートの高さの80%を最低限確保 */
+  display: flex; /* Flexboxを使い、子要素を中央に配置 */
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  text-align: center; /* テキストを中央揃え */
+  color: white; /* テキスト色を白に */
+  position: relative; /* 子要素の絶対配置の基準にするため */
+  overflow: hidden; /* 子要素がはみ出さないように */
+  padding: 20px; /* スマートフォンなどでコンテンツが端に寄りすぎないように余白 */
+  box-sizing: border-box; /* paddingを含めて幅を計算 */
+}
+
+.hero-content {
+  max-width: 1200px; /* コンテンツ全体の最大幅を広げる */
+  width: 100%; /* 親要素(hero)の幅いっぱいに */
+  z-index: 1;
+  
+  /* Flexboxで中身を配置する */
+  display: flex; 
+  flex-direction: column; /* PC以外はデフォルト縦並び */
+  justify-content: center; /* 垂直方向中央揃え */
+  align-items: center; /* 水平方向中央揃え */
+  gap: 30px; /* テキストと画像間の隙間（縦並び時） */
+}
+.hero-text {
+  width: 100%; /* 基本的にフル幅を使う */
+  max-width: 700px; /* テキストブロックの最大幅 */
+  margin-bottom: 0; /* デフォルトの縦並び時のマージンはFlexboxのgapで対応 */
+}
+
+
+.hero-text h1 {
+  /* clamp の最大値を調整し、大きくなりすぎないようにする */
+  font-size: clamp(2rem, 4.5vw, 3rem); /* 例: 最大3remに */
+  margin-bottom: 0.8rem; /* 少しだけ調整 */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.1rem); /* 例: 最大1.1remに */
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.2rem); /* レスポンシブなフォントサイズ */
+  margin-top: 1rem; /* 上の要素との余白 */
+  opacity: 0.9; /* 少し透明度をつけて馴染ませる */
+}
+
+.hero-image-wrapper {
+  width: 90%; /* 画像ラッパーの幅 */
+  max-width: 500px; /* 画像ラッパーの最大幅 */
+  flex-shrink: 0; /* 画像ラッパーは基本的に縮まないようにする */
+  display: flex; /* 画像を中央に寄せるため */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrapper img {
+  width: 100%; /* ラッパーに合わせた幅 */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+/* 各セクション共通スタイル */
+.section {
+  padding: 60px 20px; /* 上下左右の余白 */
+  text-align: center; /* コンテンツを中央揃えに */
+  max-width: 1200px; /* セクションの最大幅 */
+  margin: 0 auto; /* 中央揃え */
+  background: white; /* デフォルトの背景色を白に（暗いbody背景との対比） */
+  border-bottom: 1px solid #eee; /* セクション間に薄い区切り線 */
+  box-sizing: border-box; /* paddingを含めて幅を計算 */
+}
+
+/* 最後のセクション（お問い合わせ）は下線なし */
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-size: 2.5rem; /* 見出しのサイズ */
+  margin-bottom: 30px; /* 下の要素との余白 */
+  color: #333; /* 見出しの色 */
+}
+
+/* セクション内の画像 */
+/* section-image に float が設定されていましたが、一般的なレイアウトでは推奨されないため変更します */
+.section-image {
+  max-width: 600px; /* 画像の最大幅を制限 */
+  width: 100%; /* 親要素の幅に合わせて可変 */
+  height: auto; /* アスペクト比を維持 */
+  display: block; /* 余分な下部の隙間をなくす */
+  margin: 0 auto 40px auto; /* 中央揃えにして、下部に余白を持たせる */
+  border-radius: 8px; /* 角を少し丸くする */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 影をつけて立体感を出す */
+}
+
+/* image-warapper は特にスタイルが不要であれば削除してもOKですが、今回はそのままにしておきます */
+/* .image-warapper { } */
+
+/* カードコンテナ */
+.cards {
+  display: flex; /* Flexboxを使い、中のカードを横並びにする */
+  flex-wrap: wrap; /* 画面幅が足りなくなったら、カードを折り返して次の行に配置する */
+  justify-content: center; /* カードを水平方向の中央に配置 */
+  gap: 20px; /* カード間の隙間 */
+  margin-top: 30px; /* 見出しとの間に余白 */
+}
+
+/* 個々のカード */
+.card {
+  background: white; /* カードの背景色 */
+  border: 1px solid #ddd; /* 境界線 */
+  border-radius: 8px; /* 角を丸くする */
+  padding: 30px; /* 内側の余白 */
+  flex: 1 1 300px; /* Flexアイテムのサイズを柔軟に設定 */
+  /* flex-grow: 1; -> 伸びることを許可 */
+  /* flex-shrink: 1; -> 縮むことを許可 */
+  /* flex-basis: 300px; -> 基本的な幅を300pxとする（これより小さくも大きくもなる） */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 影 */
+  text-align: center; /* カード内のテキストを中央揃え */
+  font-weight: bold; /* テキストを太字に */
+  color: #555; /* テキストの色 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* ホバー時に少し上に移動 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* ホバー時に影を濃くする */
+}
+/* 自己紹介セクション */
+.about-content {
+  display: flex;
+  flex-direction: column; /* PC以外は縦並びをデフォルトに */
+  align-items: center; /* 縦並び時の水平中央揃え */
+  gap: 30px; /* テキストと画像の間の隙間 */
+  text-align: center; /* 縦並び時のテキスト中央揃え */
+}
+
+.about-image-wrapper {
+  width: 100%;
+  max-width: 300px; /* 画像の最大幅を制限 */
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* プロフィール画像なので丸くする */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  width: 100%;
+  max-width: 700px; /* テキストの最大幅 */
+}
+
+/* タブレット・PC向け: 768px 以上（横並び） */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row; /* 横並びにする */
+    text-align: left; /* テキストを左寄せに */
+    gap: 50px; /* テキストと画像間の隙間 */
+    align-items: center; /* ★重要：垂直方向の中央揃え。これにより画像とテキストのブロックの上下が揃いやすくなります */
+  }
+
+  .hero-text {
+    width: 50%; /* テキストエリアの幅 */
+    flex-grow: 1; /* 余ったスペースがあればテキストが伸びる */
+    flex-shrink: 1; /* 必要に応じて縮む */
+    margin-bottom: 0; 
+    text-align: left;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem); /* 横並び時のフォントサイズ調整 */
+  }
+
+  .hero-image-wrapper {
+    width: 50%; /* 画像エリアの幅 */
+    flex-grow: 1; /* 余ったスペースがあれば画像が伸びる */
+    flex-shrink: 1; /* 必要に応じて縮む */
+  }
+}
+/* --- レスポンシブ対応 --- */
+
+/* タブレット向け: 768px 以上（横並び） */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row; /* 横並びにする */
+    text-align: left; /* テキストを左寄せに */
+    gap: 50px; /* テキストと画像間の隙間 */
+  }
+
+  .hero-text {
+    width: 50%; /* テキストエリアの幅 */
+    margin-bottom: 0; /* PCで縦並びの時の余白をリセット */
+    text-align: left; /* テキストを左寄せに戻す */
+  }
+
+  .hero-image-wrapper {
+    width: 50%; /* 画像エリアの幅 */
+    display: flex; /* 画像自体を中央に寄せたい場合 */
+    justify-content: center; /* 水平方向中央 */
+    align-items: center; /* 垂直方向中央 */
+  }
+
+  .hero-image-wrapper img {
+    max-width: 100%; /* 画像がエリアからはみ出さないように */
+  }
+}
+
+/* PC向け: 1024px 以上（横並びは維持しつつ、さらに調整） */
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 1000px; /* PCではさらにコンテンツ幅を広げる */
+    /* align-items: flex-start;  もしテキストと画像のブロックの上端を揃えたい場合はこちら */
+    padding: 0 50px; /* 左右のパディング */
+  }
+
+  .hero-text h1 {
+    font-size: clamp(3rem, 4vw, 4rem); /* PCではさらにフォントを大きく */
+  }
+
+  .hero-image-wrapper img {
+    max-width: 550px; /* PCでの画像の最大幅を少し上げる */
+  }
+}
+
+/* スマートフォン向け: 767px 以下（縦並びに戻す） */
+/* @media (max-width: 767px) {  */
+/* タブレットのmax-width: 768px で縦並びになったので、ここでは特別な指定は不要 */
+/* ただし、必要であればここで詳細な調整を行う */
+/* } */
