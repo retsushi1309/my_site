@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モダンスタートアップ企業サイト</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base settings */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            @apply bg-gray-100 text-gray-800 overflow-x-hidden;
+        }
+
+        /* Custom styles for specific elements not fully covered by Tailwind */
+        .gradient-overlay {
+            position: relative;
+        }
+        .gradient-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        .gradient-overlay > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-divider::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #6b7280; /* Gray-500 for accent */
+            margin: 1.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .company-h2-after::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #6b7280 0%, #4b5563 100%); /* Gray gradient */
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Delay animations for staggered effect */
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        .animate-delay-500 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="relative h-screen flex items-center justify-center text-white overflow-hidden bg-gray-900">
+        <!-- Background image with subtle overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://placehold.co/1920x1080/374151/ffffff?text=Modern+Office" alt="Modern Office Background" class="w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900 opacity-80"></div>
+        </div>
+
+        <!-- Header Content -->
+        <div class="relative z-10 text-center px-5 py-10 max-w-6xl mx-auto">
+            <div class="flex flex-col items-center justify-between md:flex-row md:flex-wrap mb-12">
+                <h1 class="text-4xl font-extrabold mb-4 md:text-5xl lg:text-6xl md:mb-0 animate-fade-in-down">
+                    <a href="#" class="hover:opacity-80 transition-opacity">YourStartup</a>
+                </h1>
+                <nav class="mt-6 md:mt-0 animate-fade-in-down animate-delay-200">
+                    <ul class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
+                        <li><a href="#about" class="text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">About</a></li>
+                        <li><a href="#service" class="text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">Service</a></li>
+                        <li><a href="#works" class="text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">Works</a></li>
+                        <li><a href="#price" class="text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">Price</a></li>
+                        <li><a href="#news" class="text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">News</a></li>
+                        <li><a href="#company" class="text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">Company</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="text-xl mt-8 mb-8 md:text-2xl lg:text-3xl font-light animate-fade-in-up animate-delay-300">
+                未来を形作る、革新的なテクノロジーソリューションを提供します。
+            </p>
+            <p class="animate-fade-in-up animate-delay-400">
+                <a href="#" class="inline-block bg-white text-gray-800 py-3 px-8 rounded-full font-bold text-lg transition-all duration-300 hover:bg-gray-200 hover:scale-105 shadow-xl">
+                    今すぐ始める
+                </a>
+            </p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20 px-5 text-gray-900 md:py-28 lg:py-36">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in-up">
+                <img src="https://placehold.co/800x600/e5e7eb/1a1a1a?text=Our+Vision" alt="Our Vision" class="w-full h-auto rounded-xl object-cover shadow-lg">
+            </div>
+            <div class="animate-fade-in-up animate-delay-200">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4 md:text-5xl lg:text-6xl">
+                    私たちのビジョン
+                </h1>
+                <h2 class="text-2xl text-gray-700 mb-6 font-medium md:text-3xl">
+                    テクノロジーで未来を創造する
+                </h2>
+                <p class="text-lg leading-relaxed text-gray-600 mb-8 md:text-xl">
+                    私たちは、最先端の技術と創造的なアプローチで、お客様のビジネスに新たな価値をもたらします。デジタルトランスフォーメーションの波を乗りこなし、持続可能な成長を共に実現することが私たちの使命です。
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-gray-600 mr-3 text-xl">&#10003;</span>
+                        <p class="text-base text-gray-700 leading-relaxed">
+                            <strong class="text-gray-900 font-semibold">革新的なソリューション:</strong> 常に新しい技術とアイデアを追求し、市場をリードするソリューションを提供します。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-gray-600 mr-3 text-xl">&#10003;</span>
+                        <p class="text-base text-gray-700 leading-relaxed">
+                            <strong class="text-gray-900 font-semibold">顧客中心のアプローチ:</strong> お客様の課題を深く理解し、最適なカスタマイズされたサービスを提供します。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-gray-600 mr-3 text-xl">&#10003;</span>
+                        <p class="text-base text-gray-700 leading-relaxed">
+                            <strong class="text-gray-900 font-semibold">持続可能な成長:</strong> 環境と社会に配慮し、長期的な視点でビジネスの発展を支援します。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Section -->
+    <section id="service" class="bg-gray-800 py-20 px-5 text-white md:py-28 lg:py-36">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-center text-4xl font-bold text-white mb-6 section-divider pb-2 md:text-5xl lg:text-6xl animate-fade-in-down">
+                私たちのサービス
+            </h2>
+            <p class="text-center max-w-3xl mx-auto mb-16 text-gray-300 leading-relaxed md:text-lg animate-fade-in-up animate-delay-200">
+                お客様のビジネスを次のレベルへと引き上げるための、幅広い専門サービスを提供しています。
+            </p>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-gray-700 rounded-xl shadow-xl p-8 transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl animate-fade-in-up animate-delay-300">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">
+                        クラウドソリューション
+                    </h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        AWS, Azure, GCPを活用したスケーラブルでセキュアなクラウドインフラを構築・運用します。
+                    </p>
+                    <ul class="list-none pl-0 mt-4 text-gray-400">
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            クラウド移行支援
+                        </li>
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            DevOps導入
+                        </li>
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            セキュリティ強化
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-700 rounded-xl shadow-xl p-8 transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl animate-fade-in-up animate-delay-400">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">
+                        AI/データサイエンス
+                    </h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        データに基づいた意思決定を支援するAIモデル開発とデータ分析を提供します。
+                    </p>
+                    <ul class="list-none pl-0 mt-4 text-gray-400">
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            機械学習モデル開発
+                        </li>
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            ビッグデータ分析
+                        </li>
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            予測分析
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-700 rounded-xl shadow-xl p-8 transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl animate-fade-in-up animate-delay-500">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-100">
+                        UI/UXデザイン
+                    </h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        ユーザー中心設計に基づき、直感的で魅力的なデジタルプロダクトをデザインします。
+                    </p>
+                    <ul class="list-none pl-0 mt-4 text-gray-400">
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            ユーザーリサーチ
+                        </li>
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            プロトタイピング
+                        </li>
+                        <li class="relative pl-6 mb-2 before:content-['\2022'] before:absolute before:left-0 before:text-gray-400 before:font-bold">
+                            アクセシビリティ対応
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="bg-gray-100 py-20 px-5 text-gray-800 text-center md:py-28 lg:py-36">
+        <h2 class="text-4xl font-bold mb-6 text-gray-900 section-divider pb-2 md:text-5xl lg:text-6xl animate-fade-in-down">
+            私たちの実績
+        </h2>
+        <p class="max-w-3xl mx-auto mb-16 text-lg leading-relaxed text-gray-700 md:text-xl animate-fade-in-up animate-delay-200">
+            お客様の成功を共に築き上げてきた、代表的なプロジェクトをご紹介します。
+        </p>
+        <div class="grid grid-cols-1 gap-8 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-3">
+            <article class="bg-white rounded-xl p-8 shadow-lg transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-xl animate-fade-in-up animate-delay-300">
+                <img src="https://placehold.co/600x400/d1d5db/333333?text=Project+Alpha" alt="Project Alpha" class="w-full h-48 object-cover rounded-lg mb-6 shadow-sm">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 text-left">
+                    大規模データ分析プラットフォーム
+                </h3>
+                <p class="mb-3 leading-relaxed text-gray-700 text-left">
+                    <strong class="text-gray-800">概要:</strong> 数十億レコードを扱うリアルタイムデータ分析プラットフォームを開発。
+                </p>
+                <p class="mb-3 leading-relaxed text-gray-700 text-left">
+                    <strong class="text-gray-800">成果:</strong> データ処理速度50%向上、意思決定の迅速化に貢献。
+                </p>
+                <a href="#" class="inline-block mt-4 py-3 px-6 bg-gray-700 text-white text-base font-bold rounded-md transition-colors duration-300 hover:bg-gray-900">
+                    詳細を見る
+                </a>
+            </article>
+
+            <article class="bg-white rounded-xl p-8 shadow-lg transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-xl animate-fade-in-up animate-delay-400">
+                <img src="https://placehold.co/600x400/d1d5db/333333?text=Project+Beta" alt="Project Beta" class="w-full h-48 object-cover rounded-lg mb-6 shadow-sm">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 text-left">
+                    AIチャットボット導入プロジェクト
+                </h3>
+                <p class="mb-3 leading-relaxed text-gray-700 text-left">
+                    <strong class="text-gray-800">概要:</strong> 顧客サポート業務を効率化するAI搭載チャットボットを導入。
+                </p>
+                <p class="mb-3 leading-relaxed text-gray-700 text-left">
+                    <strong class="text-gray-800">成果:</strong> 顧客問い合わせ対応時間30%削減、顧客満足度向上。
+                </p>
+                <a href="#" class="inline-block mt-4 py-3 px-6 bg-gray-700 text-white text-base font-bold rounded-md transition-colors duration-300 hover:bg-gray-900">
+                    詳細を見る
+                </a>
+            </article>
+
+            <article class="bg-white rounded-xl p-8 shadow-lg transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-xl animate-fade-in-up animate-delay-500">
+                <img src="https://placehold.co/600x400/d1d5db/333333?text=Project+Gamma" alt="Project Gamma" class="w-full h-48 object-cover rounded-lg mb-6 shadow-sm">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3 text-left">
+                    モバイルアプリ開発（FinTech）
+                </h3>
+                <p class="mb-3 leading-relaxed text-gray-700 text-left">
+                    <strong class="text-gray-800">概要:</strong> 新規FinTechサービス向けに、セキュアで使いやすいモバイルアプリを開発。
+                </p>
+                <p class="mb-3 leading-relaxed text-gray-700 text-left">
+                    <strong class="text-gray-800">成果:</strong> リリース後3ヶ月で10万ダウンロードを達成。
+                </p>
+                <a href="#" class="inline-block mt-4 py-3 px-6 bg-gray-700 text-white text-base font-bold rounded-md transition-colors duration-300 hover:bg-gray-900">
+                    詳細を見る
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section id="price" class="bg-gray-900 py-20 px-5 text-white text-center md:py-28 lg:py-36">
+        <h2 class="text-4xl font-bold mb-6 text-white section-divider pb-2 md:text-5xl lg:text-6xl animate-fade-in-down">
+            料金プラン
+        </h2>
+        <p class="max-w-3xl mx-auto mb-16 text-lg leading-relaxed text-gray-300 md:text-xl animate-fade-in-up animate-delay-200">
+            お客様のビジネス規模とニーズに合わせた、柔軟なプランをご用意しています。
+        </p>
+        <div class="flex flex-col items-center justify-center gap-8 mt-10 md:flex-row md:flex-wrap">
+            <div class="bg-gray-700 rounded-xl shadow-xl p-8 w-11/12 max-w-sm text-left transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl animate-fade-in-up animate-delay-300">
+                <h3 class="text-2xl font-bold text-gray-100 mb-4">
+                    スタートアップ
+                </h3>
+                <div class="text-4xl font-bold text-gray-300 mb-6">
+                    月額 ¥80,000〜
+                </div>
+                <ul class="list-none pl-0 text-gray-400 text-base leading-relaxed space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>初期段階のコンサルティング</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>MVP開発支援</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>限定的サポート</p>
+                    </li>
+                </ul>
+                <a href="#" class="inline-block mt-8 py-3 px-7 bg-gray-500 text-white text-lg font-bold rounded-lg shadow-md transition-colors duration-300 hover:bg-gray-600 hover:translate-y-[-2px]">
+                    詳細を見る
+                </a>
+            </div>
+
+            <div class="bg-gray-700 rounded-xl shadow-xl p-8 w-11/12 max-w-sm text-left transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl animate-fade-in-up animate-delay-400">
+                <h3 class="text-2xl font-bold text-gray-100 mb-4">
+                    グロース
+                </h3>
+                <div class="text-4xl font-bold text-gray-300 mb-6">
+                    月額 ¥250,000〜
+                </div>
+                <ul class="list-none pl-0 text-gray-400 text-base leading-relaxed space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>スケーラブルなシステム開発</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>フルスタック開発チーム</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>専任プロジェクトマネージャー</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>優先サポート</p>
+                    </li>
+                </ul>
+                <a href="#" class="inline-block mt-8 py-3 px-7 bg-gray-500 text-white text-lg font-bold rounded-lg shadow-md transition-colors duration-300 hover:bg-gray-600 hover:translate-y-[-2px]">
+                    詳細を見る
+                </a>
+            </div>
+
+            <div class="bg-gray-700 rounded-xl shadow-xl p-8 w-11/12 max-w-sm text-left transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-2xl animate-fade-in-up animate-delay-500">
+                <h3 class="text-2xl font-bold text-gray-100 mb-4">
+                    エンタープライズ
+                </h3>
+                <div class="text-4xl font-bold text-gray-300 mb-6">
+                    個別見積もり
+                </div>
+                <ul class="list-none pl-0 text-gray-400 text-base leading-relaxed space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>カスタムソリューション開発</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>戦略的パートナーシップ</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>24/7 緊急サポート</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-400 mr-3 text-xl">&#10003;</span>
+                        <p>オンサイトコンサルティング</p>
+                    </li>
+                </ul>
+                <a href="#" class="inline-block mt-8 py-3 px-7 bg-gray-500 text-white text-lg font-bold rounded-lg shadow-md transition-colors duration-300 hover:bg-gray-600 hover:translate-y-[-2px]">
+                    お問い合わせ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="bg-gray-200 py-20 px-5 text-gray-800 md:py-28 lg:py-36">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-center text-4xl font-bold text-gray-900 mb-6 section-divider pb-2 md:text-5xl lg:text-6xl animate-fade-in-down">
+                最新情報
+            </h2>
+            <p class="text-center max-w-xl mx-auto mb-16 text-lg leading-relaxed text-gray-700 md:text-xl animate-fade-in-up animate-delay-200">
+                私たちの活動や業界の最新トレンドに関する情報をお届けします。
+            </p>
+            <ul class="list-none p-0 m-0">
+                <li class="bg-white rounded-lg shadow-md p-6 mb-6 flex flex-col gap-2 transition-transform duration-300 hover:translate-y-[-5px] hover:shadow-lg animate-fade-in-up animate-delay-300">
+                    <time datetime="2025-07-10" class="text-sm text-gray-600 font-medium">2025.07.10</time>
+                    <a href="#" class="text-xl font-semibold text-gray-900 hover:underline">
+                        AIを活用した新サービス「スマートアナリティクス」をリリース
+                    </a>
+                    <p class="text-gray-700 text-base mt-2">
+                        ビジネスの意思決定を加速させるための革新的なAI分析ツールを発表しました。
+                    </p>
+                </li>
+                <li class="bg-white rounded-lg shadow-md p-6 mb-6 flex flex-col gap-2 transition-transform duration-300 hover:translate-y-[-5px] hover:shadow-lg animate-fade-in-up animate-delay-400">
+                    <time datetime="2025-06-25" class="text-sm text-gray-600 font-medium">2025.06.25</time>
+                    <a href="#" class="text-xl font-semibold text-gray-900 hover:underline">
+                        デジタルトランスフォーメーションに関するウェビナー開催のお知らせ
+                    </a>
+                    <p class="text-gray-700 text-base mt-2">
+                        DX推進の課題と解決策について、専門家が解説する無料ウェビナーを開催します。
+                    </p>
+                </li>
+                <li class="bg-white rounded-lg shadow-md p-6 mb-6 flex flex-col gap-2 transition-transform duration-300 hover:translate-y-[-5px] hover:shadow-lg animate-fade-in-up animate-delay-500">
+                    <time datetime="2025-06-01" class="text-sm text-gray-600 font-medium">2025.06.01</time>
+                    <a href="#" class="text-xl font-semibold text-gray-900 hover:underline">
+                        新オフィス移転のお知らせ
+                    </a>
+                    <p class="text-gray-700 text-base mt-2">
+                        事業拡大に伴い、本社オフィスを移転しました。より快適な環境でお客様をお迎えします。
+                    </p>
+                </li>
+            </ul>
+            <p class="text-center mt-10 animate-fade-in-up animate-delay-600">
+                <a href="#" class="inline-block bg-gray-700 text-white py-3 px-7 rounded-md font-bold transition-colors duration-300 hover:bg-gray-900">
+                    お知らせ一覧を見る
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="max-w-4xl mx-auto my-20 px-5 py-12 bg-white rounded-xl shadow-xl transition-all duration-300 hover:translate-y-[-5px] hover:shadow-2xl md:my-28 md:p-16 lg:my-36 lg:p-20 animate-fade-in-up">
+        <h2 class="text-4xl font-light text-gray-900 mb-10 text-center tracking-wide relative company-h2-after pb-4 md:text-5xl lg:text-6xl">
+            会社概要
+        </h2>
+        <img src="https://placehold.co/1000x400/e5e7eb/1a1a1a?text=Company+Building" alt="Company Building" class="w-full h-72 object-cover rounded-lg mb-12 shadow-md transition-transform duration-300 hover:scale-102 md:h-80 lg:h-96">
+        <table class="w-full border-collapse bg-gray-50 rounded-lg overflow-hidden shadow-sm">
+            <thead>
+                <tr class="hidden"> <!-- For accessibility, visually hidden but present -->
+                    <th>項目</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-gray-100">
+                    <th class="p-5 text-left border-b border-gray-200 bg-gray-100 text-gray-700 font-semibold w-1/3 min-w-[150px] tracking-wide text-base md:text-lg">
+                        会社名
+                    </th>
+                    <td class="p-5 text-left border-b border-gray-200 text-gray-800 font-normal text-base md:text-lg">
+                        株式会社YourStartup
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <th class="p-5 text-left border-b border-gray-200 bg-gray-100 text-gray-700 font-semibold w-1/3 min-w-[150px] tracking-wide text-base md:text-lg">
+                        設立
+                    </th>
+                    <td class="p-5 text-left border-b border-gray-200 text-gray-800 font-normal text-base md:text-lg">
+                        20XX年X月X日
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <th class="p-5 text-left border-b border-gray-200 bg-gray-100 text-gray-700 font-semibold w-1/3 min-w-[150px] tracking-wide text-base md:text-lg">
+                        所在地
+                    </th>
+                    <td class="p-5 text-left border-b border-gray-200 text-gray-800 font-normal text-base md:text-lg">
+                        〒XXX-XXXX 東京都渋谷区XXXXX
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <th class="p-5 text-left border-b border-gray-200 bg-gray-100 text-gray-700 font-semibold w-1/3 min-w-[150px] tracking-wide text-base md:text-lg">
+                        資本金
+                    </th>
+                    <td class="p-5 text-left border-b border-gray-200 text-gray-800 font-normal text-base md:text-lg">
+                        XXX万円
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <th class="p-5 text-left border-b border-gray-200 bg-gray-100 text-gray-700 font-semibold w-1/3 min-w-[150px] tracking-wide text-base md:text-lg">
+                        事業内容
+                    </th>
+                    <td class="p-5 text-left border-b border-gray-200 text-gray-800 font-normal text-base md:text-lg">
+                        クラウドソリューション、AI/データサイエンス、UI/UXデザイン
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <th class="p-5 text-left border-b-0 bg-gray-100 text-gray-700 font-semibold w-1/3 min-w-[150px] tracking-wide text-base md:text-lg">
+                        代表者
+                    </th>
+                    <td class="p-5 text-left border-b-0 text-gray-800 font-normal text-base md:text-lg">
+                        代表取締役 山田 太郎
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center text-sm md:py-12">
+        <div class="max-w-6xl mx-auto px-5">
+            <p>&copy; 2025 YourStartup. All rights reserved.</p>
+            <div class="mt-6 flex justify-center gap-6">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors text-base">プライバシーポリシー</a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors text-base">利用規約</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

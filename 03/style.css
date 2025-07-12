@@ -1,4 +1,4 @@
-* {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -55,17 +55,47 @@
             margin-top: 1rem; /* 上マージン */
         }
 
-        nav ul {
-            list-style: none; /* リスト記号を削除 */
-            display: flex; /* フレックスボックスで横並び */
-            justify-content: center; /* 中央揃え */
-            flex-wrap: wrap; /* 小画面で折り返し */
-            padding: 0; /* パディングをリセット */
-        }
+        
 
         nav li {
             margin: 0 1rem; /* 左右マージン */
         }
+        .hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 110;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #ff6b35;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* メニューが開いた時 */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* メニューリストの初期状態を非表示に */
+nav ul {
+    transition: max-height 0.3s ease;
+}
 
         nav a {
             display: block; /* ブロック要素にしてクリック範囲を拡大 */

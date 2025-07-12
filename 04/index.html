@@ -5,32 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> スタートアップのビジネスを飛躍させる | [Praxis]</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        
+        <div class="company">
+        <h1>Praxis</h1>
         <nav>
-            <div class="nav-container">
-                <div class="logo">Pracxis</div>
-                    <button class="hamburger" id="hamberger" aria-label="メニューを開く">
-                    &#9976;
-                    </button> 
-                
-                <ul>
-                    <span><li><a href="#about">About</a></li></span>
-                    <span><li><a href="#service">Service</a></li></span>
-                    <span><li><a href="#works">Works</a></li></span>
-                    <span><li><a href="#price">Price</a></li></span>
-                    <span><li><a href="#news">News</a></li></span>
-                    <span><li><a href="#contact">Contact</a></li></span>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#price">Price</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
+        </div>
         <img src="images/irasuto.png" alt="イメージロゴ">
-        
-        <h1>「作る」じゃなく、「伸ばす」ためのWeb制作。</h1>
         <p>あなたのビジネスを飛躍させる、戦略的Webパートナー</p>
-        
         <p><a href="#contact">お問い合わせ</a></p>
     </header>
 
@@ -38,6 +31,7 @@
         <section id="about">
         
             <img src="images/meeting.jpg" alt="ミーティング">
+            <h1>About</h1>
             <h2>私たちについて | 選ばれる理由</h2>
             <h3>単なる制作で終わらない、あなたのビジネスを深く理解するパートナー</h3>
             <p>私たちは、単にWebサイトやアプリケーションを制作するだけでなく、<strong>あなたのビジネスを深く理解し、共に成長するパートナー</strong>でありたいと考えています。Webを通じて、あなたの事業が次のステージへと飛躍するための最適な戦略とソリューションを提供します。</p>
@@ -63,64 +57,107 @@
             </ul>
             </section>
 
-        <section id="service">
-            <h2>サービス</h2>
-            <p>私たちは、あなたのビジネス課題を解決し、成長を加速させるためのWebサービスを提供しています。</p>
+       <section id="service">
+  <h2>サービス</h2>
+  <p>私たちは、あなたのビジネス課題を解決し、成長を加速させるためのWebサービスを提供しています。</p>
 
-            <h3>ホームページ作成</h3>
-            <p><strong>ビジネスの顔となる、集客と成果に繋がる戦略的ホームページ制作</strong></p>
-            <ul>
-                <li>対象：コーポレートサイト、ランディングページ（LP）、ポートフォリオサイト、ECサイトなど</li>
-                <li>特徴：SEO対策を考慮した設計、スマートフォン対応（レスポンシブデザイン）、ターゲットユーザーに響くデザインとコンテンツ提案、更新しやすいCMS（WordPressなど）の導入支援</li>
-                <li>メリット：顧客獲得、ブランドイメージ向上、オンラインでの信頼性構築</li>
-            </ul>
+  <div class="service-grid">
+    <div class="service-card">
+  <i class="fa-solid fa-globe icon"></i>
+  <h3>ホームページ作成</h3>
+  <p><strong>集客と成果に繋がる戦略的ホームページ制作</strong></p>
+  <ul>
+    <li>対象：コーポレートサイト、LP、ECサイトなど</li>
+    <li>特徴：SEO設計、スマホ対応、CMS導入支援</li>
+    <li>メリット：ブランド強化、顧客獲得</li>
+  </ul>
+</div>
 
-            <h3>Webアプリケーション開発</h3>
+<div class="service-card">
+  <i class="fa-solid fa-gears icon"></i>
+  <h3>Webアプリケーション開発</h3>
+  <p><strong>業務効率化を加速させるオーダーメイド開発</strong></p>
+  <ul>
+    <li>対象：予約・顧客管理・社内ツール等</li>
+    <li>特徴：Django + React、高UX設計</li>
+    <li>メリット：自動化、事業成長</li>
+  </ul>
+</div>
 
-            <p><strong>業務効率化、新規事業創出を加速させるオーダーメイドWebアプリ開発</strong></p>
-            <ul>
-                <li>対象：予約システム、顧客管理システム、マッチングプラットフォーム、社内ツールなど</li>
-                <li>特徴：Python (Django) とReactを核とした堅牢かつスケーラブルな開発、ビジネス課題を解決するための最適な機能提案、ユーザー体験（UX）を重視した設計</li>
-                <li>メリット：業務の自動化・効率化、新しいサービスモデルの実現、競争優位性の確立</li>
-            </ul>
-
-            <h3>Web学習支援（未経験・未学者向け）</h3>
-            <p><strong>Webの「なぜ？」を解決し、自分でWebを操る力を育む個別学習サポート</strong></p>
-            <p>現在のところ、福岡県内でのオフライン個別指導を中心に提供しておりますが、将来的にはオンラインでのサポートも検討しております。</p>
-            <ul>
-                <li>対象：自分でWebサイトを更新したい個人事業主、Webの基礎知識を身につけたいフリーランス、将来的にWeb業界を目指したい方</li>
-                <li>内容：HTML/CSSの基礎、Webサイトの簡単な更新方法、Webサイト運営の基本（SEOの基礎、解析ツールの見方など）、Web制作のワークフロー理解</li>
-                <li>メリット：外注コスト削減、Webリテラシー向上、ビジネスにおけるWeb活用能力の向上</li>
-            </ul>
-        </section>
+<div class="service-card">
+  <i class="fa-solid fa-graduation-cap icon"></i>
+  <h3>Web学習支援（未経験者向け）</h3>
+  <p><strong>Webの「なぜ？」を解決する個別サポート</strong></p>
+  <ul>
+    <li>対象：個人事業主、初心者、Web志望者</li>
+    <li>内容：HTML/CSS、SEO、サイト運用基礎</li>
+    <li>メリット：外注コスト削減、スキル向上</li>
+  </ul>
+</div>
+  </div>
+</section>
 
         <section id="works">
-            
-            <h2>実績</h2>
-            <img src="images/pc.jpg" alt="pc">
-            <p>これまでの主な制作実績をご紹介します。各プロジェクトの詳細については、ぜひお問い合わせください。</p>
-            <article>
-                <h3>プロジェクト名：[プロジェクトA]</h3>
-                <p><strong>クライアント：</strong>[〇〇様（許可があれば）]</p>
-                <p><strong>制作目的/課題：</strong>[課題の内容、達成したかった目標など]</p>
-                <p><strong>提供したソリューション：</strong>[ホームページ制作、Webアプリ開発など]</p>
-                <p><strong>使用技術：</strong>HTML, CSS, JavaScript</p>
-                <p><strong>成果/効果：</strong>[具体的な成果や効果、例：お問い合わせ数20%増加]</p>
-                <p><a href="[プロジェクトAのURLや詳細ページへのリンク]" target="_blank">詳細を見る</a></p>
-            </article>
-            <article>
-                <h3>プロジェクト名：[プロジェクトB]</h3>
-                <p><strong>クライアント：</strong>[〇〇様（許可があれば）]</p>
-                <p><strong>制作目的/課題：</strong>[課題の内容、達成したかった目標など]</p>
-                <p><strong>提供したソリューション：</strong>[Webアプリケーション開発]</p>
-                <p><strong>使用技術：</strong>Python (Django), React</p>
-                <p><strong>成果/効果：</strong>[具体的な成果や効果、例：業務時間が10時間削減]</p>
-                <p><a href="[プロジェクトBのURLや詳細ページへのリンク]" target="_blank">詳細を見る</a></p>
-            </article>
-            </section>
+  <h2>実績</h2>
+  <img src="images/pc.jpg" alt="pc">
+  <p>これまでの主な制作実績をご紹介します。各プロジェクトの詳細については、ぜひお問い合わせください。</p>
+
+  <div class="works-container">
+    <article>
+      <h3>プロジェクト名：[プロジェクトA]</h3>
+      <p><strong>クライアント：</strong>[〇〇様]</p>
+      <p><strong>制作目的/課題：</strong>[目標など]</p>
+      <p><strong>提供したソリューション：</strong>[ホームページ制作]</p>
+      <p><strong>使用技術：</strong>HTML, CSS, JavaScript</p>
+      <p><strong>成果/効果：</strong>お問い合わせ数20%増加</p>
+      <p><a href="#">詳細を見る</a></p>
+    </article>
+
+    <article>
+      <h3>プロジェクト名：[プロジェクトB]</h3>
+      <p><strong>クライアント：</strong>[〇〇様]</p>
+      <p><strong>制作目的/課題：</strong>[目標など]</p>
+      <p><strong>提供したソリューション：</strong>[Webアプリ開発]</p>
+      <p><strong>使用技術：</strong>Python (Django), React</p>
+      <p><strong>成果/効果：</strong>業務時間が10時間削減</p>
+      <p><a href="#">詳細を見る</a></p>
+    </article>
+  </div>
+</section>
 
         <section id="price">
             <h2>料金</h2>
+            <div class="price-cards">
+  <div class="price-card">
+    <h3>ホームページ制作</h3>
+    <p class="price">¥150,000〜</p>
+    <ul>
+      <li>コーポレート / LP / ポートフォリオ</li>
+      <li>レスポンシブ / SEO対策</li>
+      <li>CMS導入（WordPress等）</li>
+    </ul>
+  </div>
+
+  <div class="price-card">
+    <h3>Webアプリ開発</h3>
+    <p class="price">¥300,000〜</p>
+    <ul>
+      <li>業務支援システム / 予約管理など</li>
+      <li>Django + React 開発</li>
+      <li>UX重視の設計</li>
+    </ul>
+  </div>
+
+  <div class="price-card">
+    <h3>Web学習支援</h3>
+    <p class="price">¥3,000〜 / 1h</p>
+    <ul>
+      <li>HTML / CSS / 基本操作</li>
+      <li>個別指導（福岡県内中心）</li>
+      <li>今後はオンラインも展開予定</li>
+    </ul>
+  </div>
+</div>
             <p>当社のサービスは、お客様の事業内容やご要望、目標に応じて最適なプランをご提案するため、<strong>個別見積もり</strong>とさせていただいております。</p>
             <p>まずは無料相談にて、お気軽にご要望をお聞かせください。詳細なヒアリング後、お見積もりをご提示いたします。</p>
             <p><a href="#contact">無料見積もり・ご相談はこちら</a></p>
@@ -165,6 +202,7 @@
 
         <section id="contact">
             <h2>お問い合わせ</h2>
+            
             <p>Webサイト制作、Webアプリケーション開発、Web学習支援に関するご相談やご質問がございましたら、お気軽にお問い合わせください。</p>
             <p>通常、24時間以内にご返信いたします。</p>
             <form action="#" method="post">
@@ -202,18 +240,5 @@
         <p>&copy; 2025 Praxis. All Rights Reserved.</p>
         <p><a href="[プライバシーポリシーのURL]">プライバシーポリシー</a></p>
         </footer>
-        <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const hamburger = document.getElementById('hamburger');
-        const navList = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', function () {
-            hamburger.classList.toggle('active');
-            navList.classList.toggle('show');
-        });
-    });
-</script>
 </body>
-
-</script>
 </html>
