@@ -9,3 +9,6 @@
 Django でブログの作成
 Django で問い合わせフォームのシステム
 
+# serverの構築苦戦
+conoha VPS
+
