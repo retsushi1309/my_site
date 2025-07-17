@@ -11,4 +11,6 @@ Django で問い合わせフォームのシステム
 
 # serverの構築苦戦
 conoha VPS
+1.鍵の確認ls ~/.ssh/
+2.ssh root@ipアドレス
 
