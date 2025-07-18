@@ -26,5 +26,10 @@ sudo nginx -t
 sudo systemctl restart nginx
 7.ディレクトリの作成
 sudo mkdir -p /var/www/web/
-8.ローカルから転送
+8.ローカルから転送反映させるため
 scp -r /Users/pc/web/html/ root@160.251.181.156:/var/www/web/
+
+9.ファイヤウォールの確認
+sudo ufw status verbose
+ポート８０の追加
+sudo ufw allow 80/tcp
