@@ -1,13 +1,3 @@
-# サイトの形と構成が完成✅
-
-# 画像の選定　✅
-
-# JSで動きを作る
-  内容の整理
-
-# サイトの充実のため
-Django でブログの作成
-Django で問い合わせフォームのシステム
 
 # serverの構築苦戦
 conoha VPS
@@ -17,19 +7,38 @@ conoha VPS
 ssh root@
 4.インストール
 sudo apt update
+sudo apt install apache2 -y
 sudo apt install nginx -y
-5.ルートの作成
-sudo nano /etc/nginx/sites-available/default
 
-6.テスト、再起動
-sudo nginx -t
-sudo systemctl restart nginx
-7.ディレクトリの作成
-sudo mkdir -p /var/www/web/
-8.ローカルから転送反映させるため
-scp -r /Users/pc/web/html/ root@160.251.181.156:/var/www/web/
+#　ディレクトリの作成
+sudo mkdir -p /var/www/html/praxisweb.work/public_html
+パッションの設定
+sudo chown -R www-data:www-data /var/www/html/praxisweb.work
+sudo chmod -R 755 /var/www/html/praxisweb.work
 
-9.ファイヤウォールの確認
-sudo ufw status verbose
-ポート８０の追加
-sudo ufw allow 80/tcp
+# バーチャルホストの作成
+sudo nano /etc/apache2/sites-available/praxisweb.work.conf
+コピー
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName praxisweb.work
+    ServerAlias www.praxisweb.work
+    DocumentRoot /var/www/html/praxisweb.work/public_html
+
+    <Directory /var/www/html/praxisweb.work/public_html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+有効
+sudo a2ensite praxisweb.work.conf
+デフォルト無効（重要）
+sudo a2dissite 000-default.conf
+エラーの確認
+sudo apache2ctl configtest
+再起動
+sudo systemctl reload apache2
