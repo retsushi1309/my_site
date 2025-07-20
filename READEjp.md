@@ -30,3 +30,14 @@ sudo apache2ctl configtest
 sudo systemctl reload apache2
 
 # PCからの転送
+cd　フォルダに移動
+転送
+scp -r . root@160.251.181.156:/var/www/html/praxisweb.jp/public_html/
+
+SHHからディレクトリに移動
+cd /var/www/html/praxisweb.jp/public_html
+index.htmlの確認
+ls -la
+
+
+
